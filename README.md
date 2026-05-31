@@ -1,27 +1,33 @@
 # Fustaventura
 
 <p align="center">
-  <img src="assets/fustaventura-logo.png" alt="Logo Fustaventura: fusta, ploma, música i camins" width="320">
+  <img src="assets/fustaventura-logo.png" alt="Logo de Fustaventura" width="260">
 </p>
 
-**Fustaventura** és un espai creatiu de Gobo26 per desenvolupar aventures, relats interactius, música, objectes de fusta, mapes, enigmes i petites experiències narratives.
+**Fustaventura** és un taller de creació artesanal amb fusta.
 
-La idea de fons és senzilla: una aventura feta amb mans de taller. Una mica de fusta, una mica d'escriptura, una mica de música, i camins que es van obrint a poc a poc.
+M'agrada treballar amb fusta: una matèria noble, amb propietats incomparables i una bellesa única. Tots els productes estan fets totalment o en part amb fusta, artesanalment.
 
-## Primera direcció
+Regalar una peça feta a mà és regalar personalitat.
 
-- Aventures interactives en català.
-- Històries amb objectes, pistes, mapes i decisions.
-- Materials visuals amb textura artesanal.
-- Música, veu i fragments narratius.
-- Prototips petits abans de construir projectes grans.
+## Què faig
 
-## Estat
+- Capses de música i àudio.
+- Arracades i bijuteria.
+- Capses decorades.
+- Productes de temporada.
+- Peces personalitzades fetes per encàrrec.
 
-Espai acabat de preparar. De moment conté la identitat visual inicial i servirà com a base per ordenar futures peces de Fustaventura.
+## Treball per encàrrecs
 
-## Relació amb Gobo26
+La mostra de treballs forma part de peces fetes durant anys. Com que són úniques i personalitzades, normalment ja no són al taller: han estat entregades als seus propietaris.
 
-Fustaventura forma part de l'ecosistema Gobo26, però té prou personalitat per tenir casa pròpia.
+Si vols una peça similar o tens una idea concreta, escriu-me i en parlem.
 
-Perfil Gobo26: https://github.com/Gobo26
+**Contacte:** [fustaventura@gmail.com](mailto:fustaventura@gmail.com)
+
+## Web
+
+Aquest repositori prepara la nova casa web de Fustaventura a GitHub Pages, amb la intenció de substituir l'antiga web de Wix.
+
+Web actual de referència: https://fustaventura.wixsite.com/fustaventura
