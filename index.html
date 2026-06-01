@@ -7,7 +7,7 @@
   <meta name="description" content="Fustaventura: peces artesanals de fusta, capses de música i àudio, bijuteria, capses decorades i productes de temporada fets per encàrrec.">
   <meta property="og:title" content="Fustaventura">
   <meta property="og:description" content="Peces artesanals de fusta fetes a mà i per encàrrec.">
-  <meta property="og:image" content="assets/fustaventura-logo.png">
+  <meta property="og:image" content="assets/instagram/palosanto-arbre-vida.jpg">
   <meta property="og:type" content="website">
   <link rel="icon" href="assets/fustaventura-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -194,6 +194,11 @@
       border: 10px solid rgba(255, 253, 248, 0.7);
     }
 
+    .hero-media .portrait {
+      border-radius: var(--radius);
+      transform: rotate(2deg);
+    }
+
     main {
       background: var(--cream);
       border-top: 1px solid var(--line);
@@ -247,44 +252,104 @@
     }
 
     .work-card {
-      min-height: 240px;
+      min-height: 360px;
       border: 1px solid var(--line);
-      background:
-        linear-gradient(160deg, rgba(255,255,255,0.6), rgba(255,248,238,0.2)),
-        repeating-linear-gradient(105deg, #d6ad78 0 13px, #c08b50 14px 16px, #e8c894 17px 28px);
-      padding: 1.2rem;
+      background: var(--paper);
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
       box-shadow: 0 10px 25px rgba(66, 39, 20, 0.12);
       position: relative;
       overflow: hidden;
     }
 
-    .work-card::before {
-      content: "";
-      position: absolute;
-      inset: 14px;
-      border: 1px solid rgba(90, 55, 31, 0.25);
-      pointer-events: none;
+    .work-card img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
     }
 
     .work-card h3 {
-      position: relative;
       font-size: 1.5rem;
       line-height: 1.08;
       margin: 0 0 0.45rem;
-      background: rgba(255, 253, 248, 0.82);
-      padding: 0.55rem;
+      padding: 1rem 1rem 0;
     }
 
     .work-card p {
-      position: relative;
       margin: 0;
-      background: rgba(255, 253, 248, 0.82);
-      padding: 0 0.55rem 0.55rem;
+      padding: 0 1rem 1.15rem;
       color: var(--muted);
       font-size: 0.95rem;
+    }
+
+    .gallery-band {
+      background: var(--paper);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .section-header h2 {
+      margin-bottom: 0;
+    }
+
+    .section-header .wide-text {
+      margin: 0.7rem 0 0;
+    }
+
+    .section-header .button {
+      white-space: nowrap;
+    }
+
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 1fr;
+      grid-auto-rows: 210px;
+      gap: 1rem;
+    }
+
+    .photo-item {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--cream);
+      box-shadow: 0 10px 25px rgba(66, 39, 20, 0.12);
+    }
+
+    .photo-item.large {
+      grid-row: span 2;
+    }
+
+    .photo-item.wide {
+      grid-column: span 2;
+    }
+
+    .photo-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-item figcaption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.85rem 1rem;
+      color: #fff8ee;
+      background: linear-gradient(transparent, rgba(38, 25, 15, 0.86));
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 800;
     }
 
     .contact-band {
@@ -364,8 +429,24 @@
 
       .process,
       .grid,
+      .photo-gallery,
       .contact-band .section {
         grid-template-columns: 1fr;
+      }
+
+      .section-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .photo-gallery {
+        grid-auto-rows: 260px;
+      }
+
+      .photo-item.large,
+      .photo-item.wide {
+        grid-row: auto;
+        grid-column: auto;
       }
     }
   </style>
@@ -382,6 +463,7 @@
         <a href="https://gobo26.github.io/Taller_de_lletres/">Taller</a>
         <a href="https://gobo26.github.io/Textos26/">Textos26</a>
         <a href="https://gobo26.github.io/fustaventura/" aria-current="page">Fustaventura</a>
+        <a href="https://www.instagram.com/fustaventura/">Instagram</a>
       </nav>
     </div>
   </header>
@@ -397,7 +479,7 @@
       </div>
     </div>
     <div class="hero-media">
-      <img src="assets/fustaventura-logo.png" alt="Emblema de Fustaventura gravat en fusta">
+      <img class="portrait" src="assets/instagram/palosanto-arbre-vida.jpg" alt="Cremador de palosanto de fusta amb arbre de la vida gravat">
     </div>
   </section>
 
@@ -429,21 +511,55 @@
       <p class="wide-text">Treballo per encàrrecs directes i personalitzats. Les peces que veus representades són part del que he fet durant anys; com que són úniques, normalment ja han estat entregades als seus propietaris.</p>
       <div class="grid">
         <article class="work-card">
+          <img src="assets/instagram/capsa-audio-personalitzada.jpg" alt="Capsa de fusta personalitzada amb sistema d'audio" loading="lazy">
           <h3>Capses de música i àudio</h3>
           <p>Peces amb presència, so i memòria.</p>
         </article>
         <article class="work-card">
+          <img src="assets/instagram/arracades-fusta.jpg" alt="Arracades i detalls de fusta artesanals" loading="lazy">
           <h3>Arracades i bijuteria</h3>
           <p>Detalls petits amb textura i personalitat.</p>
         </article>
         <article class="work-card">
+          <img src="assets/instagram/capsetes-fusta.jpg" alt="Capsetes de fusta per guardar records" loading="lazy">
           <h3>Capses decorades</h3>
           <p>Objectes útils que també volen ser bonics.</p>
         </article>
         <article class="work-card">
-          <h3>Productes de temporada</h3>
-          <p>Idees especials per moments concrets de l'any.</p>
+          <img src="assets/instagram/palosanto-fusta-massissa.jpg" alt="Cremador artesanal de fusta massissa per palosanto" loading="lazy">
+          <h3>Cremadors de palosanto</h3>
+          <p>Petits rituals amb fusta, metall i calma.</p>
         </article>
+      </div>
+    </section>
+
+    <section class="gallery-band" id="galeria">
+      <div class="section">
+        <div class="section-header">
+          <div>
+            <h2>Peces que surten del taller</h2>
+            <p class="wide-text">Una mostra d'alguns encàrrecs i objectes fets amb fusta: capses, bijuteria, gravats i petits rituals per regalar o guardar.</p>
+          </div>
+          <a class="button secondary" href="https://www.instagram.com/fustaventura/">Veure Instagram</a>
+        </div>
+        <div class="photo-gallery" aria-label="Galeria de peces de Fustaventura">
+          <figure class="photo-item large">
+            <img src="assets/instagram/palosanto-arbre-vida.jpg" alt="Cremador de palosanto amb arbre de la vida gravat" loading="lazy">
+            <figcaption>Cremadors de palosanto</figcaption>
+          </figure>
+          <figure class="photo-item">
+            <img src="assets/instagram/arracades-fusta.jpg" alt="Arracades artesanals sobre fusta" loading="lazy">
+            <figcaption>Bijuteria natural</figcaption>
+          </figure>
+          <figure class="photo-item">
+            <img src="assets/instagram/capsa-petit-princep.jpg" alt="Capsa del Petit Princep amb fitxes de fusta" loading="lazy">
+            <figcaption>Capses amb joc i memòria</figcaption>
+          </figure>
+          <figure class="photo-item wide">
+            <img src="assets/instagram/capsetes-fusta.jpg" alt="Capsetes de fusta decorades" loading="lazy">
+            <figcaption>Capsetes personalitzades</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -460,7 +576,7 @@
   </main>
 
   <footer>
-    ©2026 · Fustaventura · Peces artesanals de fusta · <a href="https://gobo26.github.io/gobo26/">Aplicacions</a> · <a href="https://gobo26.github.io/Taller_de_lletres/">Taller de Lletres</a> · <a href="https://gobo26.github.io/Textos26/">Textos26</a>
+    ©2026 · Fustaventura · Peces artesanals de fusta · <a href="https://www.instagram.com/fustaventura/">Instagram</a> · <a href="https://gobo26.github.io/gobo26/">Aplicacions</a> · <a href="https://gobo26.github.io/Taller_de_lletres/">Taller de Lletres</a> · <a href="https://gobo26.github.io/Textos26/">Textos26</a>
   </footer>
 </body>
 </html>
