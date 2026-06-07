@@ -311,8 +311,7 @@
 
     .photo-gallery {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr 1fr;
-      grid-auto-rows: 210px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1rem;
     }
 
@@ -322,34 +321,25 @@
       border: 1px solid var(--line);
       background: var(--cream);
       box-shadow: 0 10px 25px rgba(66, 39, 20, 0.12);
+      aspect-ratio: 4 / 3;
     }
 
-    .photo-item.large {
-      grid-row: span 2;
-    }
-
-    .photo-item.wide {
+    .photo-item.featured-link {
       grid-column: span 2;
+    }
+
+    .photo-item a {
+      display: block;
+      width: 100%;
+      height: 100%;
     }
 
     .photo-item img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       display: block;
-    }
-
-    .photo-item figcaption {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      padding: 0.85rem 1rem;
-      color: #fff8ee;
-      background: linear-gradient(transparent, rgba(38, 25, 15, 0.86));
-      font-family: Arial, sans-serif;
-      font-size: 0.9rem;
-      font-weight: 800;
+      background: #fffaf2;
     }
 
     .video-feature {
@@ -386,36 +376,19 @@
 
     .complete-gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-      grid-auto-rows: 12px;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
       gap: 0.9rem;
       margin-top: 1rem;
     }
 
     .complete-gallery .photo-item {
-      min-height: 220px;
-    }
-
-    .complete-gallery .photo-item:nth-child(4n + 1) {
-      grid-row: span 20;
-    }
-
-    .complete-gallery .photo-item:nth-child(4n + 2) {
-      grid-row: span 16;
-    }
-
-    .complete-gallery .photo-item:nth-child(4n + 3) {
-      grid-row: span 22;
-    }
-
-    .complete-gallery .photo-item:nth-child(4n + 4) {
-      grid-row: span 18;
+      min-height: 0;
     }
 
     .complete-gallery img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       display: block;
     }
 
@@ -533,22 +506,12 @@
         flex-direction: column;
       }
 
-      .photo-gallery {
-        grid-auto-rows: 260px;
-      }
-
-      .photo-item.large,
-      .photo-item.wide {
-        grid-row: auto;
+      .photo-item.featured-link {
         grid-column: auto;
       }
 
       .complete-gallery {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .complete-gallery .photo-item {
-        grid-row: span 18;
       }
     }
   </style>
@@ -667,21 +630,22 @@
           <a class="button secondary" href="https://www.instagram.com/fustaventura/">Veure Instagram</a>
         </div>
         <div class="photo-gallery" aria-label="Galeria de peces de Fustaventura">
-          <figure class="photo-item large">
+          <figure class="photo-item featured-link">
+            <a href="https://www.instagram.com/fetdefils/" target="_blank" rel="noopener" aria-label="Veure Fetdefils a Instagram">
+              <img src="assets/wix/d0ac7e_7d2d5667bbac485db01e368b90f42379~mv2.jpg" alt="Capsa del Petit Princep amb amigurumis del Petit Princep i la guineu" loading="lazy">
+            </a>
+          </figure>
+          <figure class="photo-item">
             <img src="assets/wix/d0ac7e_13c151f6cc5b47f2a4e33e0f0ea2e775~mv2.jpg" alt="Peça artesanal de Fustaventura" loading="lazy">
-            <figcaption>Cremadors i peces petites</figcaption>
           </figure>
           <figure class="photo-item">
             <img src="assets/wix/d0ac7e_cf12a82c6a67414dbd6e1de3ee217911~mv2.jpg" alt="Arracades artesanals de fusta" loading="lazy">
-            <figcaption>Bijuteria natural</figcaption>
           </figure>
           <figure class="photo-item">
             <img src="assets/wix/d0ac7e_565c8351533048a0b32b0dae06d6c2cb~mv2.jpg" alt="Capsa de fusta personalitzada" loading="lazy">
-            <figcaption>Capses amb memòria</figcaption>
           </figure>
-          <figure class="photo-item wide">
+          <figure class="photo-item">
             <img src="assets/wix/d0ac7e_34b04aa045f245a7a0b2e262c7839119~mv2.jpg" alt="Treball artesanal en fusta" loading="lazy">
-            <figcaption>Acabats fets a mà</figcaption>
           </figure>
         </div>
         <div class="complete-gallery" id="galeria-completa" aria-label="Galeria completa de Fustaventura"></div>
@@ -804,8 +768,7 @@
       "d0ac7e_5ba5b0a8dce94e32927ae7c2b11c9208~mv2.jpg",
       "d0ac7e_a0d9b173a56d43048cbf59a50a9a792f~mv2.jpg",
       "d0ac7e_eadca3cb6b6f40b896060f6380ac5543~mv2.jpg",
-      "d0ac7e_fa415a115dac41ee9b5f206711069b2d~mv2.jpg",
-      "d0ac7e_7d2d5667bbac485db01e368b90f42379~mv2.jpg"
+      "d0ac7e_fa415a115dac41ee9b5f206711069b2d~mv2.jpg"
     ];
 
     const gallery = document.getElementById("galeria-completa");
