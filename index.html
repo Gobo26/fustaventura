@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fustaventura · Peces artesanals de fusta</title>
-  <meta name="description" content="Fustaventura: peces artesanals de fusta, capses de música i àudio, bijuteria, capses decorades i productes de temporada fets per encàrrec.">
-  <meta property="og:title" content="Fustaventura">
-  <meta property="og:description" content="Peces artesanals de fusta fetes a mà i per encàrrec.">
-  <meta property="og:image" content="assets/enhanced/instagram/palosanto-arbre-vida.jpg">
+  <title>Fustaventura · Artesania en fusta: capses de música, bijuteria i peces úniques</title>
+  <meta name="description" content="Fustaventura: capses de música i d'àudio personalitzades, arracades i penjolls de fusta, cremadors de palo santo i peces de temporada. Artesania feta a mà i per encàrrec.">
+  <meta property="og:title" content="Fustaventura · Artesania en fusta">
+  <meta property="og:description" content="Capses de música personalitzades, bijuteria de fusta i peces úniques fetes a mà.">
+  <meta property="og:image" content="assets/obres/capses/capsa-gravada-ma.jpg">
   <meta property="og:type" content="website">
-  <link rel="icon" href="assets/fustaventura-logo.png">
+  <link rel="icon" href="assets/fustaventura-logo-320.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Barlow+Condensed:wght@700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -27,9 +27,7 @@
       --radius: 8px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -42,14 +40,12 @@
       line-height: 1.6;
     }
 
-    a {
-      color: var(--wood-dark);
-    }
+    a { color: var(--wood-dark); }
 
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 40;
       background: rgba(37, 32, 27, 0.94);
       border-bottom: 1px solid rgba(255, 250, 240, 0.18);
       backdrop-filter: blur(10px);
@@ -89,6 +85,7 @@
       border-radius: 50%;
       object-fit: cover;
       box-shadow: 0 2px 10px rgba(66, 39, 20, 0.18);
+      background: #fff;
     }
 
     nav {
@@ -123,7 +120,7 @@
       min-height: 440px;
       padding: 2.6rem 1.2rem 2.2rem;
       display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(250px, 0.65fr);
+      grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.75fr);
       gap: 2.2rem;
       align-items: center;
     }
@@ -142,11 +139,10 @@
       font-size: clamp(2.6rem, 6vw, 4.8rem);
       line-height: 0.95;
       margin: 0 0 1.2rem;
-      letter-spacing: 0;
     }
 
     .lead {
-      font-size: clamp(1.18rem, 2vw, 1.55rem);
+      font-size: clamp(1.18rem, 2vw, 1.5rem);
       max-width: 700px;
       margin: 0;
       color: var(--ink);
@@ -179,24 +175,15 @@
       color: var(--wood-dark);
     }
 
-    .hero-media {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
     .hero-media img {
-      width: min(100%, 340px);
-      aspect-ratio: 1;
+      width: 100%;
+      aspect-ratio: 4 / 3;
       object-fit: cover;
-      border-radius: 50%;
-      box-shadow: var(--shadow);
-      border: 10px solid rgba(255, 253, 248, 0.7);
-    }
-
-    .hero-media .portrait {
       border-radius: var(--radius);
-      transform: rotate(2deg);
+      box-shadow: var(--shadow);
+      border: 8px solid rgba(255, 253, 248, 0.75);
+      transform: rotate(1.5deg);
+      cursor: zoom-in;
     }
 
     main {
@@ -207,19 +194,25 @@
     .section {
       max-width: 1120px;
       margin: 0 auto;
-      padding: 4rem 1.2rem;
+      padding: 3.6rem 1.2rem;
     }
 
     .section h2 {
-      font-size: clamp(2rem, 4vw, 3.4rem);
+      font-size: clamp(2rem, 4vw, 3.2rem);
       line-height: 1;
-      margin: 0 0 1.4rem;
+      margin: 0 0 1.2rem;
     }
 
     .wide-text {
       max-width: 850px;
-      font-size: 1.16rem;
+      font-size: 1.14rem;
       color: var(--muted);
+    }
+
+    .band {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--paper);
     }
 
     .process {
@@ -234,7 +227,6 @@
     .process-step {
       background: var(--paper);
       padding: 1.4rem;
-      min-height: 190px;
     }
 
     .process-step strong {
@@ -244,133 +236,87 @@
       color: var(--wood-dark);
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1rem;
-      margin-top: 2rem;
-    }
+    .process-step p { margin: 0; color: var(--muted); }
 
-    .work-card {
-      min-height: 360px;
-      border: 1px solid var(--line);
-      background: var(--paper);
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 10px 25px rgba(66, 39, 20, 0.12);
+    /* ---- Carrusels ---- */
+    .carousel {
       position: relative;
-      overflow: hidden;
+      margin-top: 1.8rem;
     }
 
-    .work-card img {
+    .carousel-track {
+      display: flex;
+      gap: 0.9rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: 0.2rem 0.2rem 1rem;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: var(--wood) transparent;
+    }
+
+    .carousel-track figure {
+      margin: 0;
+      flex: 0 0 auto;
+      width: min(64vw, 300px);
+      scroll-snap-align: start;
+    }
+
+    .carousel-track img {
       width: 100%;
       aspect-ratio: 1;
       object-fit: cover;
       display: block;
-    }
-
-    .work-card h3 {
-      font-size: 1.5rem;
-      line-height: 1.08;
-      margin: 0 0 0.45rem;
-      padding: 1rem 1rem 0;
-    }
-
-    .work-card p {
-      margin: 0;
-      padding: 0 1rem 1.15rem;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .gallery-band {
-      background: var(--paper);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .section-header {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .section-header h2 {
-      margin-bottom: 0;
-    }
-
-    .section-header .wide-text {
-      margin: 0.7rem 0 0;
-    }
-
-    .section-header .button {
-      white-space: nowrap;
-    }
-
-    .photo-gallery {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
-    }
-
-    .photo-item {
-      position: relative;
-      overflow: hidden;
       border: 1px solid var(--line);
-      background: var(--cream);
-      box-shadow: 0 10px 25px rgba(66, 39, 20, 0.12);
-      aspect-ratio: 4 / 3;
-    }
-
-    .photo-item.featured-link {
-      grid-column: span 2;
-    }
-
-    .photo-item a {
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
-
-    .photo-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
       background: #fffaf2;
+      border-radius: var(--radius);
+      box-shadow: 0 8px 20px rgba(66, 39, 20, 0.12);
+      cursor: zoom-in;
+      transition: transform 0.25s ease;
     }
 
-    .photo-item.featured-link {
-      aspect-ratio: auto;
-    }
+    .carousel-track img:hover { transform: translateY(-4px); }
 
-    .photo-item.featured-link a {
-      height: auto;
-    }
-
-    .photo-item.featured-link img {
-      aspect-ratio: 4 / 3;
-      height: auto;
-    }
-
-    .photo-item.featured-link figcaption {
-      padding: 0.85rem 1rem;
-      border-top: 1px solid var(--line);
-      background: #fffaf2;
-      color: var(--wood-dark);
+    .carousel-track figcaption {
       font-family: Arial, sans-serif;
-      font-size: 0.95rem;
-      font-weight: 800;
+      font-size: 0.82rem;
+      color: var(--muted);
+      padding-top: 0.45rem;
       text-align: center;
     }
 
-    .video-feature {
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-65%);
+      z-index: 5;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: rgba(255, 253, 248, 0.95);
+      color: var(--wood-dark);
+      font-size: 1.4rem;
+      line-height: 1;
+      cursor: pointer;
+      box-shadow: 0 6px 16px rgba(66, 39, 20, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .carousel-btn:hover { background: #fff; }
+    .carousel-btn.prev { left: -10px; }
+    .carousel-btn.next { right: -10px; }
+
+    /* ---- Vídeo ---- */
+    .media-split {
       display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(280px, 1.05fr);
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.9fr);
       gap: 2rem;
       align-items: center;
+      margin-top: 2rem;
     }
 
     .video-frame {
@@ -378,13 +324,25 @@
       border: 1px solid var(--line);
       background: #1f1710;
       box-shadow: var(--shadow);
+      border-radius: var(--radius);
     }
 
     .video-frame video {
       width: 100%;
       display: block;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
+    }
+
+    .video-frame.vertical {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    .video-caption {
+      font-family: Arial, sans-serif;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.6rem;
+      text-align: center;
     }
 
     .details-list {
@@ -394,27 +352,17 @@
       font-size: 1.04rem;
     }
 
-    .details-list li + li {
-      margin-top: 0.35rem;
+    .details-list li + li { margin-top: 0.35rem; }
+
+    .section-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1.5rem;
     }
 
-    .complete-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-      gap: 0.9rem;
-      margin-top: 1rem;
-    }
-
-    .complete-gallery .photo-item {
-      min-height: 0;
-    }
-
-    .complete-gallery img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
-    }
+    .section-header h2 { margin-bottom: 0; }
+    .section-header .button { white-space: nowrap; }
 
     .quote-grid {
       display: grid;
@@ -429,11 +377,7 @@
       padding: 1.2rem;
     }
 
-    .quote p {
-      margin: 0;
-      color: var(--muted);
-      font-style: italic;
-    }
+    .quote p { margin: 0; color: var(--muted); font-style: italic; }
 
     .quote strong {
       display: block;
@@ -454,9 +398,7 @@
     }
 
     .contact-band h2,
-    .contact-band p {
-      color: inherit;
-    }
+    .contact-band p { color: inherit; }
 
     .contact-band .button {
       background: #fff8ee;
@@ -474,19 +416,68 @@
       background: var(--cream);
     }
 
-    footer p {
-      margin: 0.25rem 0;
+    footer p { margin: 0.25rem 0; }
+
+    /* ---- Lightbox ---- */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(24, 17, 11, 0.92);
+      padding: 2.5rem 1rem 1rem;
     }
+
+    .lightbox.open { display: flex; }
+
+    .lightbox img {
+      max-width: min(94vw, 1400px);
+      max-height: 82vh;
+      object-fit: contain;
+      border-radius: 4px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    }
+
+    .lightbox figcaption {
+      position: absolute;
+      bottom: 1.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #f1dfc5;
+      font-family: Arial, sans-serif;
+      font-size: 0.95rem;
+      text-align: center;
+      max-width: 90vw;
+    }
+
+    .lightbox button {
+      position: absolute;
+      background: rgba(255, 248, 238, 0.12);
+      color: #fff4dd;
+      border: 1px solid rgba(255, 248, 238, 0.35);
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      font-size: 1.5rem;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox button:hover { background: rgba(255, 248, 238, 0.25); }
+    .lightbox .lb-close { top: 1rem; right: 1rem; }
+    .lightbox .lb-prev { left: 1rem; top: 50%; transform: translateY(-50%); }
+    .lightbox .lb-next { right: 1rem; top: 50%; transform: translateY(-50%); }
 
     @media (max-width: 980px) {
       .hero {
         min-height: 380px;
-        grid-template-columns: minmax(0, 1fr) minmax(210px, 0.55fr);
+        grid-template-columns: minmax(0, 1fr) minmax(240px, 0.65fr);
         gap: 1.5rem;
-      }
-
-      .hero-media img {
-        width: min(100%, 260px);
       }
     }
 
@@ -496,15 +487,9 @@
         flex-direction: column;
       }
 
-      nav {
-        justify-content: flex-start;
-        width: 100%;
-      }
+      nav { justify-content: flex-start; width: 100%; }
 
-      nav a {
-        font-size: 0.7rem;
-        padding: 0.4rem 0.56rem;
-      }
+      nav a { font-size: 0.7rem; padding: 0.4rem 0.56rem; }
 
       .hero {
         grid-template-columns: 1fr;
@@ -512,18 +497,10 @@
         padding-top: 1.5rem;
       }
 
-      .hero-media {
-        order: -1;
-      }
-
-      .hero-media img {
-        width: min(58vw, 230px);
-      }
+      .hero-media { order: -1; }
 
       .process,
-      .grid,
-      .photo-gallery,
-      .video-feature,
+      .media-split,
       .quote-grid,
       .contact-band .section {
         grid-template-columns: 1fr;
@@ -534,13 +511,7 @@
         flex-direction: column;
       }
 
-      .photo-item.featured-link {
-        grid-column: auto;
-      }
-
-      .complete-gallery {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+      .carousel-btn { display: none; }
     }
   </style>
 </head>
@@ -548,7 +519,7 @@
   <header class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="#inici" aria-label="Fustaventura">
-        <img src="assets/fustaventura-logo.png" alt="">
+        <img src="assets/fustaventura-logo-320.png" alt="">
         <span>Fustaventura</span>
       </a>
       <nav aria-label="Navegació entre espais">
@@ -563,129 +534,250 @@
 
   <section class="hero" id="inici">
     <div>
-      <p class="eyebrow">Peces artesanals fetes a mà</p>
+      <p class="eyebrow">Artesania en fusta · Peces úniques i per encàrrec</p>
       <h1>Fustaventura</h1>
-      <p class="lead">La fusta és una matèria noble, viva i plena de personalitat. Cada peça de Fustaventura és única, amb textures que només la natura pot oferir.</p>
+      <p class="lead">Capses de música, bijuteria i objectes de fusta fets a mà, un a un, al taller. Disseny propi, materials nobles i acabats pensats per durar tota la vida.</p>
       <div class="hero-actions">
-        <a class="button" href="mailto:fustaventura@gmail.com">Escriu-me</a>
-        <a class="button secondary" href="#treballs">Veure què faig</a>
+        <a class="button" href="mailto:fustaventura@gmail.com">Encarrega una peça</a>
+        <a class="button secondary" href="#capses">Descobreix els treballs</a>
       </div>
     </div>
     <div class="hero-media">
-      <img class="portrait" src="assets/enhanced/instagram/palosanto-arbre-vida.jpg" alt="Cremador de palosanto de fusta amb arbre de la vida gravat">
+      <img src="assets/obres/capses/capsa-gravada-ma.jpg" alt="Capsa de fusta amb gravat ornamental, acabada de sortir del taller" data-lightbox="hero">
     </div>
   </section>
 
   <main>
-    <section class="section" id="fusta">
-      <h2>Treballar amb fusta</h2>
+    <section class="section" id="ofici">
+      <h2>L'ofici de treballar la fusta</h2>
       <div class="wide-text">
-        <p>Tots els meus productes estan fets totalment o en part amb fusta. Artesanalment.</p>
-        <p>Escollir la fusta adequada al disseny que estic preparant és sempre un plaer. Cada tipus de fusta aporta la seva textura, color i olor.</p>
-        <p>Amb una combinació de tècniques tradicionals i detalls moderns, transformo cada tros de fusta en una obra d'art funcional. La matèria primera prové d'arbres de boscos cultivats, que no generen desforestació.</p>
+        <p>Cada peça de Fustaventura comença en un tauló de fusta i acaba convertida en un objecte amb ànima. Escollir la fusta adequada per a cada disseny és part essencial del procés: cada espècie aporta la seva textura, el seu color i la seva olor.</p>
+        <p>Combino tècniques tradicionals d'ebenisteria amb eines actuals com el gravat làser o l'aerògraf. La matèria primera prové de boscos cultivats que no generen desforestació.</p>
       </div>
       <div class="process">
         <div class="process-step">
-          <strong>Disseny</strong>
-          <p>La peça comença amb una idea, una forma i una fusta que encaixi amb allò que ha de transmetre.</p>
+          <strong>1 · Disseny</strong>
+          <p>Tot comença amb una idea: una forma, un motiu i una fusta que encaixi amb allò que la peça ha de transmetre.</p>
         </div>
         <div class="process-step">
-          <strong>Taller</strong>
-          <p>Quan la peça s'acosta a la forma imaginada, arriba el moment d'allisar, encolar i preparar la superfície.</p>
+          <strong>2 · Construcció</strong>
+          <p>Tallo, ajusto i encolo cada element. Quan la peça pren la forma imaginada, arriba el moment d'allisar i preparar la superfície.</p>
         </div>
         <div class="process-step">
-          <strong>Acabat</strong>
-          <p>Aplico tècniques decoratives amb làser, aerògraf, papers o textures, i acabo pintant, envernissant o lacant.</p>
+          <strong>3 · Acabats</strong>
+          <p>Gravats làser, aerògraf, papers decorats o pintura a mà, i una protecció final amb vernís, cera o laca.</p>
         </div>
       </div>
-    </section>
-
-    <section class="section" id="video">
-      <div class="video-feature">
+      <div class="media-split">
         <div>
-          <h2>Recull de capsetes</h2>
-          <p class="wide-text">Un petit vídeo amb algunes capses i peces personalitzades: fusta, mecanismes, acabats i detalls fets a mida.</p>
+          <h2 style="font-size: clamp(1.5rem, 3vw, 2.2rem);">El làser, en acció</h2>
+          <p class="wide-text">El gravat làser permet dibuixar sobre la fusta amb una precisió impossible d'aconseguir a mà. En aquest vídeo, una tapa pren vida al taller.</p>
         </div>
-        <div class="video-frame">
-          <video controls preload="metadata" poster="assets/enhanced/wix/d0ac7e_8082598d824b42299ab09c867eb60ff5f000.jpg">
-            <source src="assets/video/recull-capsetes.mp4" type="video/mp4">
-          </video>
+        <div>
+          <div class="video-frame">
+            <video controls preload="metadata" playsinline poster="assets/video/poster-laser.jpg">
+              <source src="assets/video/laser.mp4" type="video/mp4">
+            </video>
+          </div>
+          <p class="video-caption">El làser talla i grava la capsa «De vent i ales», del principi al final.</p>
         </div>
       </div>
     </section>
 
-    <section class="section" id="treballs">
-      <h2>Els meus treballs</h2>
-      <p class="wide-text">Treballo per encàrrecs directes i personalitzats. Les peces que veus representades són part del que he fet durant anys; com que són úniques, normalment ja han estat entregades als seus propietaris.</p>
-      <ul class="details-list">
-        <li>Arracades amb dissenys propis, sempre diferents.</li>
-        <li>Arracades inspirades en rajoles hidràuliques de catàlegs originals del segle XIX.</li>
-        <li>Penjolls amb dissenys propis, modernistes, vintage i Art Nouveau.</li>
-        <li>Capses de fusta, capses de música mecàniques i capses amb sistema electrònic de gravació i reproducció.</li>
-        <li>Objectes de decoració, jocs de taula, jocs d'enginy i portaclaus amb acabats personalitzats.</li>
-      </ul>
-      <div class="grid">
-        <article class="work-card">
-          <img src="assets/enhanced/instagram/capsa-audio-personalitzada.jpg" alt="Capsa de fusta personalitzada amb sistema d'audio" loading="lazy">
-          <h3>Capses de música i àudio</h3>
-          <p>Peces amb presència, so i memòria.</p>
-        </article>
-        <article class="work-card">
-          <img src="assets/enhanced/instagram/arracades-fusta.jpg" alt="Arracades i detalls de fusta artesanals" loading="lazy">
-          <h3>Arracades i bijuteria</h3>
-          <p>Detalls petits amb textura i personalitat.</p>
-        </article>
-        <article class="work-card">
-          <img src="assets/enhanced/instagram/capsetes-fusta.jpg" alt="Capsetes de fusta per guardar records" loading="lazy">
-          <h3>Capses decorades</h3>
-          <p>Objectes útils que també volen ser bonics.</p>
-        </article>
-        <article class="work-card">
-          <img src="assets/enhanced/instagram/palosanto-fusta-massissa.jpg" alt="Cremador artesanal de fusta massissa per palosanto" loading="lazy">
-          <h3>Cremadors de palosanto</h3>
-          <p>Petits rituals amb fusta, metall i calma.</p>
-        </article>
+    <section class="band" id="capses">
+      <div class="section">
+        <h2>Capses de música i d'àudio</h2>
+        <p class="wide-text">L'especialitat de la casa: capses que sonen. N'hi ha amb mecanisme de música de corda tradicional i amb sistema electrònic que permet gravar-hi un missatge o una cançó. Cada capsa es construeix i es decora a mida: una fotografia, una rajola, un gravat o aquella melodia que ho diu tot.</p>
+        <ul class="details-list">
+          <li>Capses de música amb mecanisme de corda i melodies per triar.</li>
+          <li>Capses d'àudio amb gravació personalitzada: veu, música o tots dos.</li>
+          <li>Decoració a mida: làser, scrap, pintura, aquarel·la o fotografia.</li>
+        </ul>
+        <div class="carousel" data-group="capses">
+          <button class="carousel-btn prev" aria-label="Anterior">&#8249;</button>
+          <div class="carousel-track">
+            <figure><img src="assets/obres/capses/capsa-gravada-ma.jpg" alt="Capsa de fusta amb gravat ornamental daurat" loading="lazy"><figcaption>Gravat ornamental</figcaption></figure>
+            <figure><img src="assets/obres/capses/capsa-qr-relleu.jpg" alt="Capsa decorada amb mosaic de rajoles" loading="lazy"><figcaption>Mosaic de rajoles</figcaption></figure>
+            <figure><img src="assets/obres/capses/capsa-noces.jpg" alt="Capsa de noces amb corona de llorer i noms gravats" loading="lazy"><figcaption>Gravat per a un casament</figcaption></figure>
+            <figure><img src="assets/obres/capses/capsa-musica-1.jpg" alt="Capsa de música de fusta amb mecanisme de corda" loading="lazy"><figcaption>Capsa de música</figcaption></figure>
+            <figure><img src="assets/obres/capses/capsa-musica-2.jpg" alt="Capsa de música amb gravat de cachemira a la tapa" loading="lazy"><figcaption>Gravat de cachemira</figcaption></figure>
+            <figure><img src="assets/obres/capses/petit-princep-oberta.jpg" alt="Capsa del Petit Príncep oberta amb amigurumis" loading="lazy"><figcaption>El Petit Príncep</figcaption></figure>
+            <figure><img src="assets/obres/capses/petit-princep-detall.jpg" alt="Detall de la capsa del Petit Príncep" loading="lazy"><figcaption>Detall del Petit Príncep</figcaption></figure>
+            <figure><img src="assets/obres/capses/capsa-angels-1.jpg" alt="Capsa personalitzada amb decoració pintada" loading="lazy"><figcaption>Encàrrec personalitzat</figcaption></figure>
+            <figure><img src="assets/obres/capses/capsa-angels-2.jpg" alt="Capsa personalitzada oberta mostrant l'interior" loading="lazy"><figcaption>Interior folrat</figcaption></figure>
+            <figure><img src="assets/obres/capses/capsa-memory.jpg" alt="Capsa del Petit Príncep amb joc de memory de fusta" loading="lazy"><figcaption>Capsa amb joc de memory</figcaption></figure>
+            <figure><img src="assets/obres/capses/capsa-collage-vintage.jpg" alt="Capsa decorada amb collage d'estil vintage" loading="lazy"><figcaption>Collage vintage</figcaption></figure>
+            <figure><img src="assets/obres/capses/capsa-pintada.jpg" alt="Capsa de fusta amb arbre i dedicatòria gravats" loading="lazy"><figcaption>Amb dedicatòria gravada</figcaption></figure>
+            <figure><img src="assets/obres/capses/capsa-mosaic-1.jpg" alt="Capsa amb gravat de cachemira acabada de sortir del làser" loading="lazy"><figcaption>Acabats al taller</figcaption></figure>
+            <figure><img src="assets/obres/capses/taller-mecanismes.jpg" alt="Muntatge de mecanismes de música al taller" loading="lazy"><figcaption>El taller, per dins</figcaption></figure>
+          </div>
+          <button class="carousel-btn next" aria-label="Següent">&#8250;</button>
+        </div>
+        <div class="media-split">
+          <div>
+            <div class="video-frame">
+              <video controls preload="metadata" playsinline poster="assets/video/poster-capses-recull.jpg">
+                <source src="assets/video/capses-recull.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p class="video-caption">Recull de capses fetes per encàrrec.</p>
+          </div>
+          <div>
+            <div class="video-frame vertical">
+              <video controls preload="metadata" playsinline poster="assets/video/poster-petit-princep.jpg">
+                <source src="assets/video/petit-princep.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p class="video-caption">La capsa del Petit Príncep, amb so i amigurumis.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="gallery-band" id="galeria">
+    <section class="section" id="bijuteria">
+      <h2>Arracades, penjolls i anells</h2>
+      <p class="wide-text">Bijuteria de fusta lleugera i plena de color, amb dissenys propis que mai es repeteixen: motius inspirats en les rajoles hidràuliques del segle XIX, en el modernisme i en l'Art Nouveau, al costat de col·leccions abstractes pintades a mà.</p>
+      <div class="carousel" data-group="bijuteria">
+        <button class="carousel-btn prev" aria-label="Anterior">&#8249;</button>
+        <div class="carousel-track">
+          <figure><img src="assets/obres/bijuteria/arracades-1.jpg" alt="Arracades de fusta amb motius de colors" loading="lazy"><figcaption>Col·lecció de colors</figcaption></figure>
+          <figure><img src="assets/obres/bijuteria/arracades-5.jpg" alt="Arracades ovals de fusta amb ones blaves" loading="lazy"><figcaption>Ones blaves</figcaption></figure>
+          <figure><img src="assets/obres/bijuteria/arracades-model.jpg" alt="Arracada de fusta posada" loading="lazy"><figcaption>Lleugeres al posar-se</figcaption></figure>
+          <figure><img src="assets/obres/bijuteria/arracades-2.jpg" alt="Arracades llargues de fusta pintades a mà" loading="lazy"><figcaption>Peces úniques</figcaption></figure>
+          <figure><img src="assets/obres/bijuteria/arracades-7.jpg" alt="Arracades de fusta amb formes geomètriques verdes" loading="lazy"><figcaption>Geometries</figcaption></figure>
+          <figure><img src="assets/obres/bijuteria/arracades-8.jpg" alt="Arracades rectangulars amb motiu de rajola blava" loading="lazy"><figcaption>Rajola hidràulica</figcaption></figure>
+          <figure><img src="assets/obres/bijuteria/penjoll-casa.jpg" alt="Penjoll de fusta amb forma de casa pintada" loading="lazy"><figcaption>Penjolls de cases</figcaption></figure>
+          <figure><img src="assets/obres/bijuteria/conjunt-rajola.jpg" alt="Conjunt de penjoll i arracades amb motiu de rajola" loading="lazy"><figcaption>Conjunt de rajola</figcaption></figure>
+          <figure><img src="assets/obres/bijuteria/conjunt-granat.jpg" alt="Conjunt de penjoll i arracades en tons granats" loading="lazy"><figcaption>Conjunt granat</figcaption></figure>
+          <figure><img src="assets/obres/bijuteria/conjunt-blau.jpg" alt="Conjunt de penjoll i arracades en tons blaus" loading="lazy"><figcaption>Conjunt blau</figcaption></figure>
+          <figure><img src="assets/obres/bijuteria/anells-mostrari.jpg" alt="Mostrari d'anells de fusta de colors" loading="lazy"><figcaption>Anells</figcaption></figure>
+          <figure><img src="assets/obres/bijuteria/anell-ma.jpg" alt="Anell de fusta posat a la mà" loading="lazy"><figcaption>Anell posat</figcaption></figure>
+          <figure><img src="assets/obres/bijuteria/arracades-3.jpg" alt="Arracades de gota amb dissenys abstractes" loading="lazy"><figcaption>Gotes abstractes</figcaption></figure>
+          <figure><img src="assets/obres/bijuteria/arracades-4.jpg" alt="Arracades llargues amb tons coral" loading="lazy"><figcaption>Tons corals</figcaption></figure>
+          <figure><img src="assets/obres/bijuteria/arracades-6.jpg" alt="Arracades de fusta amb motius florals" loading="lazy"><figcaption>Motius florals</figcaption></figure>
+          <figure><img src="assets/obres/bijuteria/arracades-carto-1.jpg" alt="Arracades de botó amb motiu hexagonal" loading="lazy"><figcaption>Botons hexagonals</figcaption></figure>
+          <figure><img src="assets/obres/bijuteria/arracades-carto-2.jpg" alt="Arracades rectangulars presentades en targeta" loading="lazy"><figcaption>Presentació en targeta</figcaption></figure>
+          <figure><img src="assets/obres/bijuteria/arracades-arbre.jpg" alt="Arracades penjades en un expositor amb forma d'arbre" loading="lazy"><figcaption>L'expositor del taller</figcaption></figure>
+        </div>
+        <button class="carousel-btn next" aria-label="Següent">&#8250;</button>
+      </div>
+      <div class="media-split">
+        <div>
+          <h2 style="font-size: clamp(1.5rem, 3vw, 2.2rem);">Cada parell, una història</h2>
+          <p class="wide-text">Les col·leccions es fan per tirades molt curtes i moltes peces són úniques. Si un disseny s'acaba, no es repeteix: se'n crea un de nou.</p>
+        </div>
+        <div>
+          <div class="video-frame">
+            <video controls preload="metadata" playsinline poster="assets/video/poster-arracades.jpg">
+              <source src="assets/video/arracades.mp4" type="video/mp4">
+            </video>
+          </div>
+          <p class="video-caption">Mostra de les col·leccions d'arracades.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="cremadors">
+      <div class="section">
+        <h2>Cremadors de palo santo i altars</h2>
+        <p class="wide-text">Peces pensades per als petits rituals de cada dia: cremadors de palo santo de fusta massissa i altars de meditació gravats amb símbols — la flor de la vida, l'arbre de la vida, l'om o la triple lluna. Objectes senzills que conviden a la calma.</p>
+        <div class="carousel" data-group="cremadors">
+          <button class="carousel-btn prev" aria-label="Anterior">&#8249;</button>
+          <div class="carousel-track">
+            <figure><img src="assets/obres/cremadors/cremador-1.jpg" alt="Cremador de palo santo de fusta massissa amb gravat" loading="lazy"><figcaption>Cremador de palo santo</figcaption></figure>
+            <figure><img src="assets/obres/cremadors/cremador-triple-lluna.jpg" alt="Cremador amb gravat de triple lluna i suport metàl·lic" loading="lazy"><figcaption>Triple lluna</figcaption></figure>
+            <figure><img src="assets/obres/cremadors/cremador-espelma-1.jpg" alt="Cremador de palo santo amb espelma encesa" loading="lazy"><figcaption>Amb espelma encesa</figcaption></figure>
+            <figure><img src="assets/obres/cremadors/cremador-2.jpg" alt="Cremador de palo santo amb gravat floral" loading="lazy"><figcaption>Gravat floral</figcaption></figure>
+            <figure><img src="assets/obres/cremadors/cremadors-conjunt.jpg" alt="Conjunt de cremadors de palo santo al taller" loading="lazy"><figcaption>Sèrie del taller</figcaption></figure>
+            <figure><img src="assets/obres/cremadors/cremador-espelma-2.jpg" alt="Cremador amb palo santo i espelma sobre maó" loading="lazy"><figcaption>Petit ritual</figcaption></figure>
+            <figure><img src="assets/obres/cremadors/altar-flor-vida.jpg" alt="Altar de meditació amb la flor de la vida gravada" loading="lazy"><figcaption>Flor de la vida</figcaption></figure>
+            <figure><img src="assets/obres/cremadors/altar-arbre-vida.jpg" alt="Altar de meditació amb l'arbre de la vida gravat" loading="lazy"><figcaption>Arbre de la vida</figcaption></figure>
+            <figure><img src="assets/obres/cremadors/altar-mandala.jpg" alt="Altar de meditació amb mandala gravat" loading="lazy"><figcaption>Mandala</figcaption></figure>
+            <figure><img src="assets/obres/cremadors/altar-om.jpg" alt="Altar de meditació amb el símbol om gravat" loading="lazy"><figcaption>Om</figcaption></figure>
+          </div>
+          <button class="carousel-btn next" aria-label="Següent">&#8250;</button>
+        </div>
+        <div class="media-split">
+          <div>
+            <h2 style="font-size: clamp(1.5rem, 3vw, 2.2rem);">Un moment de calma</h2>
+            <p class="wide-text">Cada altar es grava individualment i es protegeix amb oli natural, perquè la fusta envelleixi bé al costat de l'espelma i l'encens.</p>
+          </div>
+          <div>
+            <div class="video-frame">
+              <video controls preload="metadata" playsinline poster="assets/video/poster-flor-vida.jpg">
+                <source src="assets/video/flor-vida.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p class="video-caption">Altar de meditació amb la flor de la vida.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="nadal">
+      <h2>Peces de temporada</h2>
+      <p class="wide-text">Quan s'acosta el Nadal, el taller s'omple d'arbres de fusta envellida, estels i pinyes: decoració càlida, feta a mà, que es guarda i es retroba any rere any.</p>
+      <div class="carousel" data-group="nadal">
+        <button class="carousel-btn prev" aria-label="Anterior">&#8249;</button>
+        <div class="carousel-track">
+          <figure><img src="assets/obres/nadal/arbres-1.jpg" alt="Arbres de Nadal de fusta amb llaç i pinyes" loading="lazy"><figcaption>Arbres amb llaç</figcaption></figure>
+          <figure><img src="assets/obres/nadal/arbre-blanc.jpg" alt="Arbre de Nadal blanc amb corona de boix" loading="lazy"><figcaption>Arbre blanc</figcaption></figure>
+          <figure><img src="assets/obres/nadal/arbres-2.jpg" alt="Tres arbres de Nadal de fusta amb estrella" loading="lazy"><figcaption>Trio d'arbres</figcaption></figure>
+          <figure><img src="assets/obres/nadal/arbre-vermell.jpg" alt="Arbre de Nadal de fusta amb poma vermella" loading="lazy"><figcaption>Detall vermell</figcaption></figure>
+          <figure><img src="assets/obres/nadal/arbre-pinya.jpg" alt="Arbre de Nadal de fusta amb pinya i flors" loading="lazy"><figcaption>Amb pinya</figcaption></figure>
+          <figure><img src="assets/obres/nadal/arbres-verds.jpg" alt="Arbres de Nadal de fusta sobre fons nevat" loading="lazy"><figcaption>Paisatge nevat</figcaption></figure>
+          <figure><img src="assets/obres/nadal/arbres-neu.jpg" alt="Arbres de Nadal de fusta envellida" loading="lazy"><figcaption>Fusta envellida</figcaption></figure>
+        </div>
+        <button class="carousel-btn next" aria-label="Següent">&#8250;</button>
+      </div>
+    </section>
+
+    <section class="band" id="fetdefils">
       <div class="section">
         <div class="section-header">
           <div>
-            <h2>Peces que surten del taller</h2>
-            <p class="wide-text">Una mostra d'alguns encàrrecs i objectes fets amb fusta: capses, bijuteria, gravats i petits rituals per regalar o guardar.</p>
+            <h2>Amb Fetdefils</h2>
+            <p class="wide-text">Algunes peces neixen a quatre mans: les casetes i capses de fusta surten d'aquest taller, i els amigurumis de ganxet són obra de <strong>Fetdefils</strong>. Fusta i fil, una parella ben avinguda.</p>
           </div>
           <a class="button secondary" href="https://www.instagram.com/fetdefils/" target="_blank" rel="noopener">Instagram de Fetdefils</a>
         </div>
-        <div class="photo-gallery" aria-label="Galeria de peces de Fustaventura">
-          <figure class="photo-item featured-link">
-            <a href="https://www.instagram.com/fetdefils/" target="_blank" rel="noopener" aria-label="Veure Fetdefils a Instagram">
-              <img src="assets/enhanced/wix/d0ac7e_7d2d5667bbac485db01e368b90f42379~mv2.jpg" alt="Capsa del Petit Princep amb amigurumis del Petit Princep i la guineu" loading="lazy">
-            </a>
-            <figcaption>Amigurumis cedits per Fetdefils</figcaption>
-          </figure>
-          <figure class="photo-item">
-            <img src="assets/enhanced/wix/d0ac7e_13c151f6cc5b47f2a4e33e0f0ea2e775~mv2.jpg" alt="Peça artesanal de Fustaventura" loading="lazy">
-          </figure>
-          <figure class="photo-item">
-            <img src="assets/enhanced/wix/d0ac7e_cf12a82c6a67414dbd6e1de3ee217911~mv2.jpg" alt="Arracades artesanals de fusta" loading="lazy">
-          </figure>
-          <figure class="photo-item">
-            <img src="assets/enhanced/wix/d0ac7e_565c8351533048a0b32b0dae06d6c2cb~mv2.jpg" alt="Capsa de fusta personalitzada" loading="lazy">
-          </figure>
-          <figure class="photo-item">
-            <img src="assets/enhanced/wix/d0ac7e_34b04aa045f245a7a0b2e262c7839119~mv2.jpg" alt="Treball artesanal en fusta" loading="lazy">
-          </figure>
+        <div class="carousel" data-group="fetdefils">
+          <button class="carousel-btn prev" aria-label="Anterior">&#8249;</button>
+          <div class="carousel-track">
+            <figure><img src="assets/obres/fetdefils/caseta-os.jpg" alt="Caseta de fusta blanca amb un osset de ganxet i globus" loading="lazy"><figcaption>L'osset dels globus</figcaption></figure>
+            <figure><img src="assets/obres/fetdefils/caseta-fada.jpg" alt="Caseta de fusta amb una fada de ganxet vestida de blau" loading="lazy"><figcaption>La fada blava</figcaption></figure>
+            <figure><img src="assets/obres/fetdefils/caseta-ovella.jpg" alt="Caseta de fusta amb una ovella de ganxet asseguda" loading="lazy"><figcaption>L'ovella</figcaption></figure>
+            <figure><img src="assets/obres/capses/petit-princep-oberta.jpg" alt="Capsa del Petit Príncep amb amigurumis de Fetdefils" loading="lazy"><figcaption>El Petit Príncep, junts</figcaption></figure>
+          </div>
+          <button class="carousel-btn next" aria-label="Següent">&#8250;</button>
         </div>
-        <div class="complete-gallery" id="galeria-completa" aria-label="Galeria completa de Fustaventura"></div>
       </div>
     </section>
 
-    <section class="section" id="emocions">
+    <section class="section" id="arxiu">
+      <h2>De l'arxiu del taller</h2>
+      <p class="wide-text">Una mostra de peces d'anys anteriors que ja són a casa dels seus propietaris: cada una va ser única i va marxar per no tornar.</p>
+      <div class="carousel" data-group="arxiu">
+        <button class="carousel-btn prev" aria-label="Anterior">&#8249;</button>
+        <div class="carousel-track">
+          <figure><img src="assets/enhanced/wix/d0ac7e_f2e5d0d6c0a24a348ad18ef83a8f8d40~mv2.jpg" alt="Capsa amb arbre de la vida gravat" loading="lazy"><figcaption>Arbre de la vida</figcaption></figure>
+          <figure><img src="assets/enhanced/wix/d0ac7e_301d71875fa4439ea70de806d34cf223~mv2.jpg" alt="Capsa decorada amb mosaic de rajoles" loading="lazy"><figcaption>Capsa de mosaic</figcaption></figure>
+          <figure><img src="assets/enhanced/wix/d0ac7e_128c208dd2974646b9639008e59f6520~mv2.jpg" alt="Penjoll vermell amb flor estilitzada" loading="lazy"><figcaption>Penjoll de flor</figcaption></figure>
+          <figure><img src="assets/enhanced/wix/d0ac7e_b925efc559f64a44ad5b0d628ae63331~mv2.jpg" alt="Taules de fusta gravades amb símbols" loading="lazy"><figcaption>Taules gravades</figcaption></figure>
+          <figure><img src="assets/enhanced/wix/d0ac7e_26d4919c6d294332baa2d6272d42cc94~mv2.jpg" alt="Capsa oberta amb interior de vellut" loading="lazy"><figcaption>Interior de vellut</figcaption></figure>
+          <figure><img src="assets/enhanced/wix/d0ac7e_63c78ce528504bacae1c7daec1a60154~mv2.jpg" alt="Penjoll de fusta amb triple lluna" loading="lazy"><figcaption>Triple lluna</figcaption></figure>
+          <figure><img src="assets/enhanced/wix/d0ac7e_17f48a36fe3140e4be7c21b80b2df9c9~mv2.jpg" alt="Arracades de fusta amb forma de lluna" loading="lazy"><figcaption>Llunes</figcaption></figure>
+          <figure><img src="assets/enhanced/wix/d0ac7e_5e356c89264542b79744965decd578f3~mv2.jpg" alt="Detall del taller amb palo santo" loading="lazy"><figcaption>Racó del taller</figcaption></figure>
+          <figure><img src="assets/enhanced/wix/d0ac7e_f1753459645e4ca8978b36cd7607fd75~mv2.jpeg" alt="Dues capses gravades amb motius de cachemira" loading="lazy"><figcaption>Motius de cachemira</figcaption></figure>
+        </div>
+        <button class="carousel-btn next" aria-label="Següent">&#8250;</button>
+      </div>
+    </section>
+
+    <section class="section" id="emocions" style="padding-top: 0;">
       <h2>Regala emoció</h2>
       <div class="wide-text">
-        <p>Cada peça de Fustaventura és el resultat d'un procés minuciós i ple d'amor pel detall. Escullo la fusta adequada, preparo dissenys únics i personalitzats, i combino tècniques artesanals amb eines modernes com el làser o l'aerògraf.</p>
-        <p>Cada producte pot tenir diferents acabats: pintat, scrap, làser, vernissos, lacat... Si busques un regal especial o una peça completament diferent, en podem parlar i convertir la idea en realitat.</p>
+        <p>Si busques un regal especial o tens una idea al cap — una melodia, una fotografia, un símbol —, en podem parlar i convertir-la en una peça única. Treballo per encàrrec, sense presses i amb tot el detall.</p>
       </div>
       <div class="quote-grid" aria-label="Opinions de clients">
         <blockquote class="quote">
@@ -703,8 +795,8 @@
       <div class="section">
         <div>
           <h2>Encàrrecs personalitzats</h2>
-          <p>Regala productes fets a mà. Obsequia personalitat.</p>
-          <p>Si vols tenir una peça similar a les que has vist, o tens una idea pròpia, envia'm un correu electrònic i en parlem.</p>
+          <p>Regala una peça feta a mà. Obsequia personalitat.</p>
+          <p>Si vols una peça semblant a les que has vist, o tens una idea pròpia, escriu-me i en parlem.</p>
         </div>
         <a class="button" href="mailto:fustaventura@gmail.com" id="contacte">fustaventura@gmail.com</a>
       </div>
@@ -712,103 +804,88 @@
   </main>
 
   <footer>
-    <p>©2026 · Fustaventura · Peces artesanals de fusta · <a href="https://www.instagram.com/fustaventura/">Instagram</a> · <a href="https://gobo26.github.io/gobo26/">Aplicacions</a> · <a href="https://gobo26.github.io/Taller_de_lletres/">Taller de Lletres</a> · <a href="https://gobo26.github.io/Textos26/">Textos26</a></p>
+    <p>©2026 · Fustaventura · Artesania en fusta · <a href="https://www.instagram.com/fustaventura/">Instagram</a> · <a href="https://gobo26.github.io/gobo26/">Aplicacions</a> · <a href="https://gobo26.github.io/Taller_de_lletres/">Taller de Lletres</a> · <a href="https://gobo26.github.io/Textos26/">Textos26</a></p>
     <p>Les imatges i les peces són propietat de Fustaventura, excepte els crèdits indicats. Tots els drets reservats.</p>
   </footer>
-  <script>
-    const galleryImages = [
-      "d0ac7e_34b04aa045f245a7a0b2e262c7839119~mv2.jpg",
-      "d0ac7e_cf12a82c6a67414dbd6e1de3ee217911~mv2.jpg",
-      "d0ac7e_565c8351533048a0b32b0dae06d6c2cb~mv2.jpg",
-      "d0ac7e_13c151f6cc5b47f2a4e33e0f0ea2e775~mv2.jpg",
-      "d0ac7e_8544acbcad1f4c6888119c5c17e07237~mv2.jpg",
-      "d0ac7e_4bc55984ec1a4fb390c1d7df4ccc7fba~mv2.jpg",
-      "d0ac7e_f1753459645e4ca8978b36cd7607fd75~mv2.jpeg",
-      "d0ac7e_995b66b2ba9045bb891415c1f4343cfa~mv2.jpg",
-      "d0ac7e_f7cdb2aeb3304c9e92fea40d796cca5e~mv2.jpg",
-      "d0ac7e_b925efc559f64a44ad5b0d628ae63331~mv2.jpg",
-      "d0ac7e_b881ba4bae0b4c65a04895082ac3e7dc~mv2.jpg",
-      "d0ac7e_cfd0539c6b954488a63a36090362ac8c~mv2.jpg",
-      "d0ac7e_5e356c89264542b79744965decd578f3~mv2.jpg",
-      "d0ac7e_d06c789f346645ef81d8f423b9fce1cc~mv2.jpg",
-      "d0ac7e_f0e26f4168bf42cd8646aaba8c650b83~mv2.jpg",
-      "d0ac7e_26d4919c6d294332baa2d6272d42cc94~mv2.jpg",
-      "d0ac7e_9af63b4af21d48e880fd762bdc986ee2~mv2.jpg",
-      "d0ac7e_8cf1b1d0ae024d26b9b5205d9fa13951~mv2.jpg",
-      "d0ac7e_3e63f32f56434ea0b927f09e20d8d4bc~mv2.jpg",
-      "d0ac7e_f2e9e4452c63425a947919d9625f1d71~mv2.jpg",
-      "d0ac7e_301d71875fa4439ea70de806d34cf223~mv2.jpg",
-      "d0ac7e_f2e5d0d6c0a24a348ad18ef83a8f8d40~mv2.jpg",
-      "d0ac7e_d4c6baf5a1b84f778ec62697c86dbb57~mv2.jpg",
-      "d0ac7e_55cd1e53d82a4697b56c810896434d6d~mv2.jpg",
-      "d0ac7e_506fd60821274768b8b4055a3e750ca4~mv2.jpg",
-      "d0ac7e_4f1f3ccbbb164033b94c46d7da8d6bee~mv2.jpg",
-      "d0ac7e_ce7cfba785d84d5089cc81768e497c60~mv2.jpg",
-      "d0ac7e_2590f40ab01441388cc2c7c8732a3c69~mv2.jpg",
-      "d0ac7e_c8e3cef8e2604982b09001ebeef9fd79~mv2.jpg",
-      "d0ac7e_9023a0e79d0143a39fadb8e2207e4470~mv2.jpg",
-      "d0ac7e_e0ec68ee62264e7b931d1ce4fc4be177~mv2.jpg",
-      "d0ac7e_8324035409904ee99cd02e9ed3f3fa62~mv2.jpg",
-      "d0ac7e_b8e2945ed20e407b88ea0ef2e653cd6f~mv2.jpg",
-      "d0ac7e_eb8b9b1b5c68471daa273f64feadc7b4~mv2.jpg",
-      "d0ac7e_7062dff298ec4e0883058f819e55eef8~mv2.jpg",
-      "d0ac7e_2a51fcfb2f3d4b2fa33cd80c12d4a4a5~mv2.jpg",
-      "d0ac7e_158d6b01643c4c9884627d8d7e665b8a~mv2.jpg",
-      "d0ac7e_f9f4ace15acb4b43a17209a41bec28e5~mv2.jpg",
-      "d0ac7e_76bb2152e5d142a290f8ff875bc0f5cd~mv2.jpg",
-      "d0ac7e_176367112e1449b58779513d6e65e69b~mv2.jpg",
-      "d0ac7e_7bf57ae4cadb414f851a19ae45dbaab1~mv2.jpg",
-      "d0ac7e_c62ccc03c5eb4cd5b95b215b3db9baed~mv2.jpg",
-      "d0ac7e_9cca91174f084441a36b05ff156b0d59~mv2.jpg",
-      "d0ac7e_02be7b5807104765907f6c21aa5fb741~mv2.jpg",
-      "d0ac7e_02f34cb5908748e4b6240bc4155783d8~mv2.jpg",
-      "d0ac7e_a5c1b7bdfd9d411ba3168bf1b6c54a23~mv2.jpg",
-      "d0ac7e_de86e51daef84bf5969a322cb4429f2a~mv2.jpg",
-      "d0ac7e_f35ac54a254a4ee98925a4ced188db6c~mv2.jpg",
-      "d0ac7e_0c3c2cedc416440fb846f6264ee9e916~mv2.jpg",
-      "d0ac7e_8bd817e708264c65867975df2645ad20~mv2.jpg",
-      "d0ac7e_a3d52c8e889046b4a323b40a6224260d~mv2.jpg",
-      "d0ac7e_f5ace98fb1c54076ae1b91f4728a252a~mv2.jpg",
-      "d0ac7e_ef44b4ec23c54f8b93ae687960161d10~mv2.jpg",
-      "d0ac7e_a9ebba49e93949eeb00296bddbe4d577~mv2.jpg",
-      "d0ac7e_767def1c616d4b9b8745eaa2cdd65998~mv2.jpg",
-      "d0ac7e_e6e5ab9a026e4ff5b962068ccc182555~mv2.jpg",
-      "d0ac7e_18bc990650fa4f7a9902484fc454bb8c~mv2.jpg",
-      "d0ac7e_63c78ce528504bacae1c7daec1a60154~mv2.jpg",
-      "d0ac7e_fc69682785394fac89e14fd31a2c6fa2~mv2.jpg",
-      "d0ac7e_17f48a36fe3140e4be7c21b80b2df9c9~mv2.jpg",
-      "d0ac7e_ac74a66c228a48d488318e7c09deba88~mv2.jpg",
-      "d0ac7e_0fe5794728804dceaea7023dc935f46e~mv2.jpg",
-      "d0ac7e_1bce4a49b4ca42b5a7f4d8d384530d45~mv2.jpg",
-      "d0ac7e_1293a26a9dee4d4bbea5dbf22894f484~mv2.jpg",
-      "d0ac7e_9beef67fb113458fa4ab0217d53fb9b5~mv2.jpg",
-      "d0ac7e_158d75475b3d4696a4e3b8085866a1fb~mv2.jpg",
-      "d0ac7e_91f124e1112745448face637a37d2112~mv2.jpg",
-      "d0ac7e_63fec366080c40c09e838e8bbe69bdaa~mv2.jpg",
-      "d0ac7e_c7616f3e0d5046de88f4e15f1b3f8ffb~mv2.jpg",
-      "d0ac7e_a2f6476fd4b14a1b9d6ce10ad09647fd~mv2.jpg",
-      "d0ac7e_a628a1f4ed214fb5a8b1beb928faa18b~mv2.jpg",
-      "d0ac7e_c7773b3ccd08413685bc423a492fcc65~mv2.jpg",
-      "d0ac7e_2f2aecea289342458ee9dd98e6b7f79d~mv2.jpg",
-      "d0ac7e_41a84f4814f34b05bdecbbf111486e62~mv2.jpg",
-      "d0ac7e_128c208dd2974646b9639008e59f6520~mv2.jpg",
-      "d0ac7e_e8aecd7e2c894fdcb6f29a73a30153df~mv2.jpg",
-      "d0ac7e_1128e141e92e4134bff3ebac65dda50a~mv2.jpg",
-      "d0ac7e_9ad8640a4c83486581f513f41022ba74~mv2.jpg",
-      "d0ac7e_5ba5b0a8dce94e32927ae7c2b11c9208~mv2.jpg",
-      "d0ac7e_a0d9b173a56d43048cbf59a50a9a792f~mv2.jpg",
-      "d0ac7e_eadca3cb6b6f40b896060f6380ac5543~mv2.jpg",
-      "d0ac7e_fa415a115dac41ee9b5f206711069b2d~mv2.jpg"
-    ];
 
-    const gallery = document.getElementById("galeria-completa");
-    if (gallery) {
-      gallery.innerHTML = galleryImages.map((name, index) => `
-        <figure class="photo-item">
-          <img src="assets/enhanced/wix/${name}" alt="Peça artesanal de Fustaventura ${index + 1}" loading="lazy">
-        </figure>
-      `).join("");
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imatge ampliada">
+    <button class="lb-close" aria-label="Tanca">&#10005;</button>
+    <button class="lb-prev" aria-label="Imatge anterior">&#8249;</button>
+    <img src="" alt="">
+    <figcaption></figcaption>
+    <button class="lb-next" aria-label="Imatge següent">&#8250;</button>
+  </div>
+
+  <script>
+    // Carrusels: fletxes que desplacen una pantalla sencera
+    document.querySelectorAll(".carousel").forEach(carousel => {
+      const track = carousel.querySelector(".carousel-track");
+      carousel.querySelector(".prev").addEventListener("click", () => {
+        track.scrollBy({ left: -track.clientWidth, behavior: "smooth" });
+      });
+      carousel.querySelector(".next").addEventListener("click", () => {
+        track.scrollBy({ left: track.clientWidth, behavior: "smooth" });
+      });
+    });
+
+    // Lightbox: amplia qualsevol imatge i navega dins del seu grup
+    const lightbox = document.getElementById("lightbox");
+    const lbImg = lightbox.querySelector("img");
+    const lbCaption = lightbox.querySelector("figcaption");
+    let group = [];
+    let index = 0;
+
+    function openLightbox(images, i) {
+      group = images;
+      index = i;
+      render();
+      lightbox.classList.add("open");
+      document.body.style.overflow = "hidden";
     }
+
+    function render() {
+      const img = group[index];
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lbCaption.textContent = img.alt;
+      lightbox.querySelector(".lb-prev").style.display = group.length > 1 ? "" : "none";
+      lightbox.querySelector(".lb-next").style.display = group.length > 1 ? "" : "none";
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lbImg.src = "";
+      document.body.style.overflow = "";
+    }
+
+    function step(d) {
+      index = (index + d + group.length) % group.length;
+      render();
+    }
+
+    document.querySelectorAll(".carousel-track").forEach(track => {
+      const images = Array.from(track.querySelectorAll("img"));
+      images.forEach((img, i) => {
+        img.addEventListener("click", () => openLightbox(images, i));
+      });
+    });
+
+    document.querySelectorAll("[data-lightbox]").forEach(img => {
+      img.addEventListener("click", () => openLightbox([img], 0));
+    });
+
+    lightbox.querySelector(".lb-close").addEventListener("click", closeLightbox);
+    lightbox.querySelector(".lb-prev").addEventListener("click", () => step(-1));
+    lightbox.querySelector(".lb-next").addEventListener("click", () => step(1));
+    lightbox.addEventListener("click", e => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener("keydown", e => {
+      if (!lightbox.classList.contains("open")) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") step(-1);
+      if (e.key === "ArrowRight") step(1);
+    });
   </script>
 </body>
 </html>
