@@ -515,6 +515,47 @@
       .carousel-btn { display: none; }
     }
 
+    .contact-band .section { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); align-items: start; gap: 2.5rem; }
+    .contact-band .eyebrow { color: #e8c48f; }
+    .contact-band h2 { font-size: clamp(1.9rem, 3.6vw, 2.8rem); line-height: 1.1; }
+    .contact-band h2 em { color: #e8c48f; font-weight: 400; }
+    .contact-direct { font-size: .95rem; opacity: .85; }
+    .contact-direct a { color: #fff4dd; }
+    .order-form {
+      position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: .95rem 1rem;
+      background: var(--paper); color: var(--ink); border-radius: 18px;
+      padding: 2.3rem 1.6rem 1.4rem; box-shadow: 0 22px 50px rgba(0, 0, 0, .28);
+      font-family: Arial, sans-serif; margin-top: 1rem;
+    }
+    .order-tag {
+      position: absolute; top: -.85rem; left: 1.4rem; background: var(--wood);
+      color: #fffaf0; padding: .4rem .85rem; border-radius: 6px;
+      font: 700 .75rem "Barlow Condensed", Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase;
+    }
+    .order-form .field { display: grid; gap: .35rem; }
+    .order-form .full, .order-form .form-error, .order-form .order-submit, .order-form .form-note { grid-column: 1 / -1; }
+    .order-form label { font-size: .88rem; font-weight: 700; color: var(--muted); }
+    .order-form input, .order-form select, .order-form textarea {
+      width: 100%; font: inherit; font-size: 1rem; color: var(--ink);
+      background: #fffdf8; border: 1.5px solid var(--paper-deep); border-radius: 10px; padding: .7rem .8rem;
+    }
+    .order-form textarea { resize: vertical; min-height: 6rem; }
+    .order-form input:focus, .order-form select:focus, .order-form textarea:focus {
+      outline: none; border-color: var(--wood); box-shadow: 0 0 0 3px rgba(154, 105, 57, .2);
+    }
+    .order-form [aria-invalid="true"] { border-color: #a33a2a; }
+    .order-submit {
+      margin-top: .4rem; padding: .95rem; border: 0; border-radius: 999px; cursor: pointer;
+      background: var(--wood-dark); color: #fffaf0; font: 700 1.05rem Arial, sans-serif;
+      box-shadow: 0 10px 22px rgba(90, 55, 31, .3);
+    }
+    .order-submit:hover { background: #6d4426; }
+    .form-note { margin: 0; text-align: center; font-size: .85rem; color: var(--muted) !important; }
+    .form-error { margin: 0; color: #a33a2a !important; font-weight: 700; font-size: .9rem; }
+    @media (max-width: 560px) {
+      .order-form { grid-template-columns: 1fr; padding: 2.1rem 1.1rem 1.2rem; }
+    }
+
     .zen-toggle {
       position: fixed; right: 1rem; bottom: 1rem; z-index: 50;
       display: inline-flex; align-items: center; gap: .5rem;
@@ -551,7 +592,7 @@
       <h1>Fustaventura</h1>
       <p class="lead">Capses de música, bijuteria i objectes de fusta fets a mà, un a un, al taller. Disseny propi, materials nobles i acabats pensats per durar tota la vida.</p>
       <div class="hero-actions">
-        <a class="button" href="mailto:fustaventura@gmail.com">Encarrega una peça</a>
+        <a class="button" href="#encarrecs">Encarrega una peça</a>
         <a class="button secondary" href="#capses">Descobreix els treballs</a>
       </div>
     </div>
@@ -807,11 +848,32 @@
     <section class="contact-band" id="encarrecs">
       <div class="section">
         <div>
-          <h2>Encàrrecs personalitzats</h2>
-          <p>Regala una peça feta a mà. Obsequia personalitat.</p>
-          <p>Si vols una peça semblant a les que has vist, o tens una idea pròpia, escriu-me i en parlem.</p>
+          <p class="eyebrow">Encàrrecs</p>
+          <h2>Regala una peça feta a mà, <em>pensada només per a tu</em></h2>
+          <p>Si vols una peça semblant a les que has vist, o tens una idea pròpia, explica-me-la i et respondré amb una proposta i un pressupost.</p>
+          <p class="contact-direct">També pots escriure directament a <a href="mailto:fustaventura@gmail.com" target="_blank" rel="noopener" id="contacte">fustaventura@gmail.com</a></p>
         </div>
-        <a class="button" href="mailto:fustaventura@gmail.com" id="contacte">fustaventura@gmail.com</a>
+        <form class="order-form" id="orderForm" novalidate>
+          <span class="order-tag">Demana el teu encàrrec</span>
+          <div class="field"><label for="of-nom">Nom i cognoms</label><input id="of-nom" name="nom" autocomplete="name" required></div>
+          <div class="field"><label for="of-mail">Correu electrònic</label><input id="of-mail" name="correu" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="of-tel">Telèfon</label><input id="of-tel" name="telefon" type="tel" autocomplete="tel"></div>
+          <div class="field"><label for="of-data">Per a quan la necessites?</label><input id="of-data" name="data" placeholder="p. ex. abans de Nadal"></div>
+          <div class="field full"><label for="of-tipus">Quina mena de peça?</label>
+            <select id="of-tipus" name="tipus">
+              <option>Capsa de música o d'àudio</option>
+              <option>Capsa gravada o de record</option>
+              <option>Bijuteria (arracades, penjolls, anells)</option>
+              <option>Cremador o altar de meditació</option>
+              <option>Decoració de Nadal</option>
+              <option>Una idea pròpia</option>
+            </select>
+          </div>
+          <div class="field full"><label for="of-msg">Explica'm la teva idea</label><textarea id="of-msg" name="missatge" rows="4" placeholder="Per a qui és, què t'agradaria gravar-hi, noms, dates, mides…"></textarea></div>
+          <p class="form-error" id="of-error" role="alert" hidden></p>
+          <button class="order-submit" type="submit">Envia l'encàrrec ✦</button>
+          <p class="form-note">S'obrirà el teu correu amb el missatge ja preparat; només caldrà prémer Envia.</p>
+        </form>
       </div>
     </section>
   </main>
@@ -901,6 +963,39 @@
     });
   </script>
 
+  <script>
+  (() => {
+    const f = document.getElementById('orderForm'), err = document.getElementById('of-error');
+    f.addEventListener('submit', e => {
+      e.preventDefault();
+      const v = n => f.elements[n].value.trim();
+      const bad = [];
+      ['nom', 'correu'].forEach(n => f.elements[n].removeAttribute('aria-invalid'));
+      if (!v('nom')) bad.push('nom');
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v('correu'))) bad.push('correu');
+      if (bad.length) {
+        bad.forEach(n => f.elements[n].setAttribute('aria-invalid', 'true'));
+        err.textContent = 'Si us plau, escriu el teu nom i un correu electrònic vàlid.';
+        err.hidden = false; f.elements[bad[0]].focus(); return;
+      }
+      err.hidden = true;
+      const subject = 'Encàrrec Fustaventura · ' + v('tipus') + ' · ' + v('nom');
+      const body = [
+        'Hola!', '', 'M\'agradaria encarregar una peça.', '',
+        'Nom: ' + v('nom'),
+        'Correu: ' + v('correu'),
+        'Telèfon: ' + (v('telefon') || '—'),
+        'Tipus de peça: ' + v('tipus'),
+        'Per a quan: ' + (v('data') || '—'),
+        '', 'La meva idea:', v('missatge') || '—', '', 'Gràcies!'
+      ].join('\n');
+      const a = document.createElement('a');
+      a.href = 'mailto:fustaventura@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      a.target = '_blank'; a.rel = 'noopener';
+      document.body.appendChild(a); a.click(); a.remove();
+    });
+  })();
+  </script>
   <button class="zen-toggle" id="zenToggle" type="button" aria-pressed="false" title="Música zen">
     <span class="zen-icon" aria-hidden="true">♪</span><span class="zen-label">Música zen</span>
   </button>
