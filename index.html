@@ -7,8 +7,8 @@
   <meta name="description" content="Fustaventura: capses de música i d'àudio personalitzades, arracades i penjolls de fusta, cremadors de palo santo i peces de temporada. Artesania feta a mà i per encàrrec.">
   <meta property="og:title" content="Fustaventura · Artesania en fusta">
   <meta property="og:description" content="Capses de música personalitzades, bijuteria de fusta i peces úniques fetes a mà.">
-  <meta property="og:image" content="https://gobo26.github.io/fustaventura/assets/obres/capses/capsa-gravada-ma.jpg">
-  <meta property="og:image:alt" content="Capsa de fusta amb gravat ornamental, feta a mà a Fustaventura">
+  <meta property="og:image" content="https://gobo26.github.io/fustaventura/assets/obres/capses/capsa-arbre-vida.jpg">
+  <meta property="og:image:alt" content="Capsa de fusta amb l'arbre de la vida gravat, feta a Fustaventura">
   <meta property="og:url" content="https://gobo26.github.io/fustaventura/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ca_ES">
@@ -514,6 +514,20 @@
 
       .carousel-btn { display: none; }
     }
+
+    .zen-toggle {
+      position: fixed; right: 1rem; bottom: 1rem; z-index: 50;
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .55rem .95rem; border-radius: 999px;
+      border: 1px solid var(--line); background: rgba(255, 253, 248, .92);
+      color: var(--wood-dark); font: 600 .9rem Lora, Georgia, serif;
+      box-shadow: var(--shadow); cursor: pointer; backdrop-filter: blur(6px);
+    }
+    .zen-toggle:hover { background: var(--cream); }
+    .zen-toggle .zen-icon { font-size: 1.05rem; line-height: 1; }
+    .zen-toggle[aria-pressed="true"] .zen-icon { animation: zenPulse 3.2s ease-in-out infinite; }
+    @keyframes zenPulse { 50% { opacity: .35; } }
+    @media (prefers-reduced-motion: reduce) { .zen-toggle .zen-icon { animation: none !important; } }
   </style>
 </head>
 <body>
@@ -542,7 +556,7 @@
       </div>
     </div>
     <div class="hero-media">
-      <img src="assets/obres/capses/capsa-gravada-ma.jpg" alt="Capsa de fusta amb gravat ornamental, acabada de sortir del taller" data-lightbox="hero">
+      <img src="assets/obres/capses/capsa-arbre-vida.jpg" alt="Capsa de fusta amb l'arbre de la vida gravat a la tapa i placa personalitzada" data-lightbox="hero">
     </div>
   </section>
 
@@ -885,6 +899,93 @@
       if (e.key === "ArrowLeft") step(-1);
       if (e.key === "ArrowRight") step(1);
     });
+  </script>
+
+  <button class="zen-toggle" id="zenToggle" type="button" aria-pressed="false" title="Música zen">
+    <span class="zen-icon" aria-hidden="true">♪</span><span class="zen-label">Música zen</span>
+  </button>
+  <script>
+  (() => {
+    const btn = document.getElementById('zenToggle');
+    const label = btn.querySelector('.zen-label');
+    let ctx, master, timers = [], on = false;
+
+    function reverb(c) {
+      const len = c.sampleRate * 5, ir = c.createBuffer(2, len, c.sampleRate);
+      for (let ch = 0; ch < 2; ch++) {
+        const d = ir.getChannelData(ch);
+        for (let i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 2.6);
+      }
+      const cv = c.createConvolver(); cv.buffer = ir; return cv;
+    }
+
+    function setup() {
+      ctx = new (window.AudioContext || window.webkitAudioContext)();
+      master = ctx.createGain(); master.gain.value = 0;
+      const rev = reverb(ctx), wet = ctx.createGain(); wet.gain.value = 0.55;
+      master.connect(ctx.destination); master.connect(rev); rev.connect(wet); wet.connect(ctx.destination);
+    }
+
+    // Pad suau: acords lents en pentatònica (Re)
+    const chords = [[146.83, 220.0, 293.66], [130.81, 196.0, 261.63], [110.0, 164.81, 246.94], [123.47, 185.0, 293.66]];
+    let ci = 0;
+    function pad() {
+      const t = ctx.currentTime, dur = 14;
+      const lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 700; lp.connect(master);
+      chords[ci++ % chords.length].forEach(f => {
+        [-4, 4].forEach(det => {
+          const o = ctx.createOscillator(), g = ctx.createGain();
+          o.type = 'sine'; o.frequency.value = f; o.detune.value = det;
+          g.gain.setValueAtTime(0, t);
+          g.gain.linearRampToValueAtTime(0.035, t + 5);
+          g.gain.linearRampToValueAtTime(0, t + dur);
+          o.connect(g); g.connect(lp); o.start(t); o.stop(t + dur + .1);
+        });
+      });
+      timers.push(setTimeout(pad, (dur - 5) * 1000));
+    }
+
+    // Bol tibetà / campaneta ocasional
+    const bells = [587.33, 659.25, 880.0, 987.77, 1174.66, 440.0];
+    function bell() {
+      const t = ctx.currentTime, f = bells[Math.floor(Math.random() * bells.length)];
+      [[1, .05], [2.76, .018], [5.4, .008]].forEach(([m, a]) => {
+        const o = ctx.createOscillator(), g = ctx.createGain();
+        o.type = 'sine'; o.frequency.value = f * m;
+        g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(a, t + .02);
+        g.gain.exponentialRampToValueAtTime(.0001, t + 7 / m + 1);
+        o.connect(g); g.connect(master); o.start(t); o.stop(t + 8);
+      });
+      timers.push(setTimeout(bell, 5000 + Math.random() * 9000));
+    }
+
+    function start() {
+      if (!ctx) setup();
+      ctx.resume();
+      master.gain.cancelScheduledValues(ctx.currentTime);
+      master.gain.setTargetAtTime(0.9, ctx.currentTime, 1.5);
+      pad(); timers.push(setTimeout(bell, 2500));
+      on = true; btn.setAttribute('aria-pressed', 'true'); label.textContent = 'Atura la música';
+    }
+    function stop() {
+      timers.forEach(clearTimeout); timers = [];
+      master.gain.setTargetAtTime(0, ctx.currentTime, .6);
+      setTimeout(() => { if (!on) ctx.suspend(); }, 3000);
+      on = false; btn.setAttribute('aria-pressed', 'false'); label.textContent = 'Música zen';
+    }
+    btn.addEventListener('click', () => {
+      on ? stop() : start();
+      try { localStorage.setItem('fv-zen', on ? '1' : '0'); } catch (e) {}
+    });
+
+    // Si la visita anterior la tenia engegada, torna a sonar al primer toc (els navegadors no deixen fer-ho sol)
+    let pref = null; try { pref = localStorage.getItem('fv-zen'); } catch (e) {}
+    if (pref === '1') {
+      const first = ev => { if (!on && ev.target !== btn && !btn.contains(ev.target)) start(); };
+      document.addEventListener('pointerdown', first, { once: true });
+      document.addEventListener('keydown', first, { once: true });
+    }
+  })();
   </script>
 </body>
 </html>
